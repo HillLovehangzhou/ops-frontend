@@ -1,0 +1,133 @@
+@import './variables.less';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: @font-family;
+  font-size: @font-size-base;
+  color: @text-color;
+  background-color: @background-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: @primary-color;
+  text-decoration: none;
+  transition: color @transition-duration;
+
+  &:hover {
+    color: @primary-color-hover;
+  }
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// 滚动条样式
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+// 文字省略
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-ellipsis-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// 页面容器
+.page-container {
+  padding: @padding-lg;
+  background: @component-background;
+  border-radius: @border-radius-base;
+  min-height: calc(100vh - @header-height - @padding-lg * 2 - 48px);
+}
+
+// 页面标题
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: @padding-lg;
+
+  .page-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: @text-color;
+    margin: 0;
+  }
+}
+
+// 搜索表单
+.search-form {
+  margin-bottom: @padding-md;
+  padding: @padding-md;
+  background: @component-background;
+  border-radius: @border-radius-base;
+}
+
+// 表格操作栏
+.table-actions {
+  margin-bottom: @padding-md;
+  display: flex;
+  gap: @padding-xs;
+}
+
+// 状态标签颜色
+.status-success {
+  color: @success-color;
+}
+
+.status-warning {
+  color: @warning-color;
+}
+
+.status-error {
+  color: @error-color;
+}
+
+.status-processing {
+  color: @primary-color;
+}
+
+// 优先级颜色
+.priority-high {
+  color: @error-color;
+}
+
+.priority-medium {
+  color: @warning-color;
+}
+
+.priority-low {
+  color: @success-color;
+}
